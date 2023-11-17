@@ -1,0 +1,217 @@
+.font-shadow() {
+  color: var(--color-3);
+  box-shadow: var(--color-5);
+}
+
+.colors() {
+  .font-shadow;
+  background: var(--color-2);
+}
+
+.size-orientierung() {
+  height: 5.5rem;
+  line-height: 5.5rem;
+  width: 5.5rem;
+  font-size: 2.5rem;
+}
+
+.spanmarker() {
+  color: @tomato;
+  text-transform: uppercase;
+}
+
+.hoverAktion() {
+  letter-spacing: 0.1rem;
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.container {
+  min-height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  padding-top: @main-size * 4;
+  background: var(--color-1);
+
+  .sub-container {
+    margin: 2.5rem;
+    padding: 2rem 9%;
+    border-radius: 0.5rem;
+    padding: 3rem 5rem;
+    box-shadow: var(--color-5);
+    text-align: center;
+    background: var(--color-2);
+
+    ul {
+      li {
+        padding: @main-size;
+        list-style: none;
+        font-size: @main-size - 0.7;
+
+        label {
+          display: inline-block;
+          width: 150px;
+        }
+      }
+    }
+  }
+}
+
+.heading {
+  text-align: center;
+  color: var(--color-3);
+  font-size: @main-size + 1;
+  padding-bottom: 2rem;
+
+  span {
+    .spanmarker;
+  }
+}
+
+.heading3 {
+  text-align: center;
+  color: var(--color-3);
+  font-size: @main-size - 0.7;
+  padding-bottom: @main-size - 1;
+
+  span {
+    .spanmarker;
+  }
+}
+
+.button {
+  width: 300px;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.9rem 3.5rem;
+  font-size: @main-size - 0.3;
+  color: #ffffff;
+  background: @main-color;
+  border-radius: 3rem;
+  cursor: pointer;
+
+  &:hover {
+    .hoverAktion;
+  }
+}
+
+label {
+  font-size: @main-size - 0.3;
+  .colors;
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  text-transform: none;
+}
+
+select {
+  width: 90%;
+  padding: 1rem;
+  font-size: @main-size - 0.4;
+  background: var(--input-bg-color);
+  .font-shadow;
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  text-transform: none;
+}
+
+input {
+  width: 90%;
+  padding: 1rem;
+  font-size: @main-size - 0.4;
+  .font-shadow;
+  background: var(--input-bg-color);
+  border-radius: 0.5rem;
+  margin: 0.7rem 0;
+  text-transform: none;
+}
+
+h2 {
+  font-size: @main-size + 1;
+  color: var(--color-3);
+  padding: 1rem 0;
+}
+
+section {
+  width: 80%;
+  padding: 2rem 9%;
+}
+
+.services .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+.services .box-container .box {
+  flex: 1 0 calc(33.33% - 1.5rem);
+  padding: @main-size + 0.5;
+  box-shadow: var(--color-5);
+  border-radius: 0.5rem;
+  background: var(--color-2);
+  position: relative;
+  text-align: center;
+}
+
+.services .box-container .box h3 {
+  color: var(--color-3);
+  font-size: @main-size;
+  padding: 1rem 0;
+}
+
+.services .box-container .box i {
+  height: 5rem;
+  line-height: 5rem;
+  width: 5rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  text-align: center;
+
+  &:hover {
+    .hoverAktion;
+  }
+}
+
+.actuel-page {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+
+  span {
+    .size-orientierung();
+    border-radius: 50%;
+    color: #ffffff;
+    background: @main-color;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+}
+
+ul > li > span {
+  color: var(--color-3);
+  width: 80%;
+  padding: 1rem;
+  font-size: @main-size - 0.3;
+
+  &:hover {
+    background: @main-color;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 0.3rem;
+  }
+}
+
+ul > li > i {
+  padding-left: 1rem;
+  padding-right: 0.3rem;
+  color: @tomato;
+
+  &:hover {
+    cursor: pointer;
+    .hoverAktion();
+  }
+}

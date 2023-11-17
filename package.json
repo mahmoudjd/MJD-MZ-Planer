@@ -1,0 +1,48 @@
+{
+  "name": "MJD&MZ-Planer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.mjs",
+  "scripts": {
+    "clean": "rm -rf node_modules && rm package-lock.json && npm run clean:dist",
+    "clean:dist": "rm -rf client/dist",
+    "lint": "semistandard ./client/src/scripts/**/*.mjs && semistandard ./client/src/scripts/*.mjs && semistandard ./server/**/*.mjs && semistandard ./server/*.mjs | snazzy ./client/src/**/*.mjs",
+    "format": "npm run format:client && npm run format:server",
+    "format:client": "semistandard --fix --verbose client/src | snazzy",
+    "format:server": "semistandard --fix --verbose server | snazzy",
+    "html": "mkdir -p client/dist && npm run copy",
+    "copy": "cp -r ./client/src/images client/dist/ && cp client/src/index.html client/dist/",
+    "css": "mkdir -p ./client/dist && lessc ./client/src/styles/style.less client/dist/style.css",
+    "js": "mkdir -p ./client/dist && esbuild ./client/src/scripts/main.mjs --log-level=warning --bundle --outfile=./client/dist/bundle.js",
+    "minify": "npm run minify:css && npm run minify:js",
+    "minify:css": "lessc --clean-css client/dist/style.css ./client/dist/style.css",
+    "minify:js": "terser ./client/dist/bundle.js --compress --mangle --comments=false -o ./client/dist/bundle.js",
+    "predebug": "npm run lint && npm run clean:dist",
+    "debug": "npm run html && npm run css && npm run js",
+    "build": "npm run debug && npm run minify",
+    "start": "nodemon server/app.mjs"
+  },
+  "author": "Mahmoud Al Jarad",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.2.0",
+    "clean-css": "^5.3.1",
+    "esbuild": "^0.15.18",
+    "eslint": "^8.30.0",
+    "express": "^4.18.2",
+    "less": "^4.1.3",
+    "less-plugin-clean-css": "^1.5.1",
+    "lessc": "^1.0.2",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.7.5",
+    "nodemon": "^2.0.20",
+    "qrcode": "^1.5.1",
+    "semistandard": "^16.0.1",
+    "snazzy": "^9.0.0",
+    "terser": "^5.16.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0"
+  }
+}

@@ -1,0 +1,81 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-2);
+  padding: 1.5rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: var(--color-5);
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bolder;
+    color: var(--color-3);
+    &:hover {
+      color: @tomato;
+    }
+  }
+
+  .schnelle-seiten a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: @main-size - 0.5;
+    color: var(--color-4);
+    padding: 1rem 0;
+
+    i {
+      padding-left: 1rem;
+      padding-right: 0.3rem;
+      color: @tomato;
+    }
+
+    &:hover {
+      cursor: pointer;
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.header .icons {
+  display: none;
+}
+
+.header .navbar {
+  position: absolute;
+  top: 115%;
+  right: 9%;
+  background: var(--color-2);
+  border-radius: 0.5rem;
+  box-shadow: var(--color-5);
+  width: 25rem;
+  padding: 1rem;
+  display: none;
+}
+
+.header .icons2 div:hover {
+  background: @main-color;
+  color: #ffffff;
+}
+.icons-part {
+  display: inline-flex;
+  gap: 1rem;
+  .icons2 {
+    div {
+      height: 4.5rem;
+      line-height: 4.5rem;
+      width: 4.5rem;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 1.7rem;
+      color: var(--color-3);
+      background: var(--color-1);
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+  }
+}

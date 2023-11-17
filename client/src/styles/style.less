@@ -1,0 +1,55 @@
+@main-size: 2rem;
+@tomato: rgb(244, 107, 83);
+@main-color: linear-gradient(to right, orange, tomato);
+:root {
+  --color-1: #eeeeee;
+  --color-2: #ffffff;
+  --color-3: #444444;
+  --color-4: #666666;
+  --color-5: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --input-bg-color: #f0eeed;
+  --color-6: #c1c1c1;
+}
+
+.dark-mode {
+  --color-1: #202123;
+  --color-2: #353740;
+  --color-3: #ffffff;
+  --color-4: #eeeeee;
+  --color-6: #dcdcdc;
+  --color-5: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  --input-bg-color: #6e6e80;
+}
+
+* {
+  font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Helvetica, Arial, "Liberation Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  transition: 0.25s linear;
+}
+
+body {
+  background: var(--color-2);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+@import "./header.less";
+
+@import "./main.less";
+
+@import "./pfeile.less";
+
+@import "./notification.less";
+
+@import "./footer.less";
+
+@import "./media.less";
